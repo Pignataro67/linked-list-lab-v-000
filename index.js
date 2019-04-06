@@ -53,16 +53,16 @@
 //   newNode.next = followingNodeAddress
 // }
 
-const deleteNodeAt = (index, linkedList, collection) => {
-  let previousNode
-  let currentNode = headNode(linkedList, collection)
+// const deleteNodeAt = (index, linkedList, collection) => {
+//   let previousNode
+//   let currentNode = headNode(linkedList, collection)
 
-  for (let i = 0; i < index; i++) {
-    previousNode = currentNode
-    currentNode = next(currentNode, collection)
-  }
-  previousNode.next = currentNode.next
-}
+//   for (let i = 0; i < index; i++) {
+//     previousNode = currentNode
+//     currentNode = next(currentNode, collection)
+//   }
+//   previousNode.next = currentNode.next
+// }
 
 import { link } from "fs";
 
@@ -109,11 +109,11 @@ function insertNodeAt(index, newAddress, linkedList, collection) {
   collection[newAddress].next = rightAddress
 }
 
-// function deleteNodeAt(index, linkedList, collection) {
-//   const addressToDelete = addressAt(index, linkedList, collection)
-//   const leftNode = nodeAt(index - 1, linkedList, collection)
-//   const rightAddress = addressAt(index + 1, linkedList, collection)
+function deleteNodeAt(index, linkedList, collection) {
+  const addressToDelete = addressAt(index, linkedList, collection)
+  const leftNode = nodeAt(index - 1, linkedList, collection)
+  const rightAddress = addressAt(index + 1, linkedList, collection)
 
-//   leftNode.next = rightAddress
-//   delete collection[addressToDelete]
-// }
+  leftNode.next = rightAddress
+  delete collection[addressToDelete]
+}
