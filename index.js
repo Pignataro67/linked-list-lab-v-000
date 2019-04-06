@@ -20,7 +20,7 @@ const nodeAt = (index, linkedList, collection) => {
 }
 
 const addressAt = (index, linkedList, collection) => {
-  if (index == 0) {
+  if (index === 0) {
     return linkedList
   } else {
     let node = nodeAt(index-1, linkedList, collection)
